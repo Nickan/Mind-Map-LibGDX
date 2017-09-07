@@ -3,6 +3,8 @@ package com.nickan.mindmap.screens;
 
 import com.badlogic.gdx.Screen;
 import com.nickan.mindmap.MindMap;
+import com.nickan.mindmap.framework.Engine;
+import com.nickan.mindmap.screens.node.Node;
 
 /**
  * Created by nickan on 9/5/17.
@@ -10,20 +12,22 @@ import com.nickan.mindmap.MindMap;
 
 public class MapScreen implements Screen {
     private MindMap mindMap;
-    private Renderer renderer;
+    private Engine engine;
 
     public MapScreen(MindMap mindMap) {
         this.mindMap = mindMap;
+        engine = Engine.getInstance();
+        engine.addEntity(new Node());
     }
 
     @Override
     public void show() {
-        renderer = new Renderer();
+
     }
 
     @Override
     public void render(float delta) {
-        renderer.render(delta);
+        engine.update(delta);
     }
 
     @Override
