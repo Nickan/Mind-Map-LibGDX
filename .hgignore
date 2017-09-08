@@ -1,3 +1,7 @@
 .gradle/
 .idea/
 core/build/
+android/
+build/
+build.gradle
+gradle/
